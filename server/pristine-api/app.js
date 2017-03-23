@@ -7,8 +7,11 @@ const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
 const dotenv       = require('dotenv');
+// allows different domains to access the API.
+const cors         = require('cors');
 
-mongoose.connect('mongodb://localhost/pristine-api');
+dotenv.config();
+mongoose.connect(process.env.MONGODB_URI);
 
 const app = express();
 
@@ -28,8 +31,17 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
 
+//---------------------- CORS -----------
+app.use(cors());
+
+
+//--------------- Routes Go Here ----------------------
 const index = require('./routes/index');
+const devicesApi = require('./routes/devices-api');
 app.use('/', index);
+app.use('/api',devicesApi);
+
+
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
