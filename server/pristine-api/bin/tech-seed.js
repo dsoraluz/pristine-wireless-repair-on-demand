@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const Location = require('../models/location-model');
-const Repair = require('../models/repair-model');
+const Repair = require('../models/repair-details-model');
 const Review = require('../models/review-model');
 
 dotenv.config();

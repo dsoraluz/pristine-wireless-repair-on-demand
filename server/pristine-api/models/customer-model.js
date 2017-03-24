@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Location = require('../models/location-model');
-const Repair = require('../models/location-model');
+const Repair = require('../models/repair-detail-model');
 const Device = require('../models/device-model');
 
 const Schema = mongoose.Schema;
