@@ -17,12 +17,21 @@ devicesApi.get('/devices',(req,res,next)=>{
 
 //Route to add a new device
 devicesApi.post('/devices', (req,res,next)=>{
+
+
   const theDevice = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    phone: req.body.phone,
-    email: req.body.email,
-    serviceArea: serviceArea,
+    brand: req.body.brand,
+    device: req.body.device,
+    model: req.body.model,
+    colors: req.body.color,
+    repair:[
+      {"screen": 279},
+      {"battery": 69},
+      {"dead": 69},
+      {"diaognostic": 69},
+      {"other": 69}
+    ],
+    modelNumbers: ["A1661", "A1784", "A1785"]
   };
 
   theDevice.save((err)=>{
