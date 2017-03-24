@@ -11,7 +11,9 @@ const repairSchema = new Schema(
     customer: {type: String},
     device: {type: [Device.schema]},
     review: {type: [Review.schema]},
-    location: {type: [Location.schema]}
+    location: {type: [Location.schema]},
+    dateRequested: {type: Date},
+    dateCompleted: {type: Date}
   },
   {
     timestamps:

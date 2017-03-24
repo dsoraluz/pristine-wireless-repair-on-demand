@@ -38,8 +38,12 @@ app.use(cors());
 //--------------- Routes Go Here ----------------------
 const index = require('./routes/index');
 const devicesApi = require('./routes/devices-api');
+const techsApi = require('./routes/techs-api');
+const customersApi = require('./routes/customers-api');
 app.use('/', index);
 app.use('/api',devicesApi);
+app.use('/api', techsApi);
+app.use('/api', customersApi);
 
 
 
