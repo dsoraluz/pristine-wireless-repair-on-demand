@@ -58,7 +58,7 @@ const devices = [
     model: "6S Plus",
     colors: ["Space Gray", "Gold","Silver", "Rose Gold"],
     repair:[
-      {"screen": 60},
+      {"screen": 125},
       {"battery": 69},
       {"dead": 69},
       {"diaognostic": 69},
@@ -73,7 +73,7 @@ const devices = [
     model: "6S",
     colors: ["Space Gray", "Gold","Silver", "Rose Gold"],
     repair:[
-      {"screen": 279},
+      {"screen": 100},
       {"battery": 69},
       {"dead": 69},
       {"diaognostic": 69},
