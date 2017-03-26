@@ -65,12 +65,12 @@ devicesApi.get('/devices/:id/colors', (req,res,next)=>{
     .json({message: 'Specified id is not valid'});
     return;
   }
-  Device.findOne({'_id': req.params.id}, 'colors', (err, theModel)=>{
+  Device.findOne({'_id': req.params.id}, 'colors', (err, theColors)=>{
     if(err){
       res.json(err);
       return;
     }
-    res.json(theModel);
+    res.json(theColors);
   });
 });
 
@@ -80,12 +80,12 @@ devicesApi.get('/devices/:id/repairs', (req,res,next)=>{
     .json({message: 'Specified id is not valid'});
     return;
   }
-  Device.findOne({'_id': req.params.id}, 'repair', (err, theModel)=>{
+  Device.findOne({'_id': req.params.id}, '-_id repair', (err, theRepairs)=>{
     if(err){
       res.json(err);
       return;
     }
-    res.json(theModel);
+    res.json(theRepairs);
   });
 });
 
